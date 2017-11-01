@@ -1,0 +1,8 @@
+.*
+!.gitignore
+*.iml
+build
+gradle
+gradlew
+gradlew.bat
+helium.pid
