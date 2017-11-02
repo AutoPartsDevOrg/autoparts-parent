@@ -3,6 +3,8 @@ package com.jxd.autoparts.consumer;
 
 import com.jxd.autoparts.api.interfaces.IDemoService;
 import com.jxd.autoparts.api.pojo.DemoPj;
+import com.jxd.autoparts.common.entity.DimMobileCPEntity;
+import com.jxd.autoparts.common.repository.DimMobileCPRepository;
 import com.jxd.autoparts.consumer.lisenter.InitContextListener;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
@@ -26,18 +28,18 @@ import java.util.List;
 @RestController
 @EnableScheduling
 //引入数据源后需要删除
-@SpringBootApplication(exclude={DataSourceAutoConfiguration.class,HibernateJpaAutoConfiguration.class})
-//@EnableTransactionManagement //启用事务
+@SpringBootApplication
 @ImportResource(value={"${ConfigPath}dubbo-consumer.xml"})
-//@EnableJpaRepositories(basePackages="com.alicm.open.consumer.persistence.inf",entityManagerFactoryRef="entityManagerFactory",transactionManagerRef="transactionManager")
-//@EntityScan(basePackages="com.alicm.open.consumer.model")
-@ComponentScan(basePackages="com.jxd.autoparts.consumer")
+@ComponentScan(basePackages={"com.jxd.autoparts.consumer","com.jxd.autoparts.common"})
 public class AppConsumer {
 
     private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());
 
     @Autowired
     private IDemoService demoService;
+
+    @Autowired
+    private DimMobileCPRepository dimMobileCPRepository;
 
     public static void main( String[] args ) {
 
@@ -84,6 +86,9 @@ public class AppConsumer {
         LOGGER.info("======info");
         LOGGER.warn("======warn");
         LOGGER.error("======error");
+
+        DimMobileCPEntity m = dimMobileCPRepository.findByMobile("1820108");
+        System.out.println(m.getCode());
     }
 
 }
