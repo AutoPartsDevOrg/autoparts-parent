@@ -5,6 +5,7 @@ import com.jxd.autoparts.api.interfaces.IDemoService;
 import com.jxd.autoparts.api.pojo.DemoPj;
 import com.jxd.autoparts.common.entity.DimMobileCPEntity;
 import com.jxd.autoparts.common.repository.DimMobileCPRepository;
+import com.jxd.autoparts.common.utils.DdPwdMgUtil;
 import com.jxd.autoparts.consumer.lisenter.InitContextListener;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
@@ -27,7 +28,6 @@ import java.util.List;
 
 @RestController
 @EnableScheduling
-//引入数据源后需要删除
 @SpringBootApplication
 @ImportResource(value={"${ConfigPath}dubbo-consumer.xml"})
 @ComponentScan(basePackages={"com.jxd.autoparts.consumer","com.jxd.autoparts.common"})
@@ -54,6 +54,10 @@ public class AppConsumer {
             //jar 启动时， 指定框架读取/config目录里的log4j.xml 文件
             //PropertyConfigurator.configure(System.getProperty("user.dir")+File.separator+"config"+File.separator+"log4j.properties");
         }
+
+        // 设置公钥
+        System.setProperty("publicKey", DdPwdMgUtil.DEFAULT_PUBLICKEY);
+
 
         SpringApplication application = new SpringApplication(AppConsumer.class);
         application.setRegisterShutdownHook(false);

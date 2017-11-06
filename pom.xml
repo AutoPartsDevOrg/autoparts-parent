@@ -11,6 +11,7 @@
     <module>autoparts-consumer</module>
     <module>autoparts-provider</module>
     <module>autoparts-manager</module>
+    <module>autoparts-dependencies</module>
   </modules>
   <packaging>pom</packaging>
 
@@ -91,7 +92,6 @@
         <version>${aspectj.version}</version>
       </dependency>
 
-
       <dependency>
         <groupId>org.apache.commons</groupId>
         <artifactId>commons-lang3</artifactId>
@@ -117,6 +117,19 @@
         <artifactId>aliyun-sdk-oss</artifactId>
         <version>${aliyun.oss.version}</version>
       </dependency>
+
+      <dependency>
+        <groupId>com.alibaba</groupId>
+        <artifactId>druid-spring-boot-starter</artifactId>
+        <version>1.1.5</version>
+      </dependency>
+      <dependency>
+        <groupId>com.alibaba</groupId>
+        <artifactId>druid</artifactId>
+        <version>1.1.5</version>
+      </dependency>
+
+
     </dependencies>
   </dependencyManagement>
 
@@ -124,7 +137,7 @@
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>3.8.1</version>
+      <version>4.12</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
