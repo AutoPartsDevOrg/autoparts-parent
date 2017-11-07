@@ -1,7 +1,6 @@
 package com.jxd.autoparts.manager;
 
 
-import com.jxd.autoparts.common.entity.DimMobileCPEntity;
 import com.jxd.autoparts.common.utils.DdPwdMgUtil;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
@@ -11,7 +10,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.ImportResource;
 import org.springframework.scheduling.annotation.EnableScheduling;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
