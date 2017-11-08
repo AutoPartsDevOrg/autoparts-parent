@@ -1,8 +1,6 @@
 package com.jxd.autoparts.common.utils;
 import java.io.IOException;
 import java.security.SecureRandom;
-import java.util.Base64;
-
 import javax.crypto.Cipher;
 import javax.crypto.SecretKey;
 import javax.crypto.SecretKeyFactory;
@@ -16,7 +14,6 @@ public class DesUtil {
     /**
      * Description 根据键值进行加密
      * @param data 
-     * @param key  加密键byte数组
      * @return
      * @throws Exception
      */
@@ -29,7 +26,6 @@ public class DesUtil {
     /**
      * Description 根据键值进行解密
      * @param data
-     * @param key  加密键byte数组
      * @return
      * @throws IOException
      * @throws Exception
