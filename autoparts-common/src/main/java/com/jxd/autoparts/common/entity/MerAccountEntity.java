@@ -21,7 +21,8 @@ public class MerAccountEntity extends IdEntity {
     private Date createTime;
     private Date updateTime;
     private Long merchantId;
-
+    private String utoken;
+//transient
     private Collection<AccountRoleRelEntity> accountRoleRelsById;
     private MerAccountEntity merAccountByCreateUid;
     private MerAccountEntity merAccountByUpdateUid;
@@ -149,6 +150,16 @@ public class MerAccountEntity extends IdEntity {
         this.merchantId = merchantId;
     }
 
+    @Basic
+    @Column(name = "utoken", nullable = true)
+    public String getUtoken() {
+        return utoken;
+    }
+
+    public void setUtoken(String utoken) {
+        this.utoken = utoken;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -169,6 +180,7 @@ public class MerAccountEntity extends IdEntity {
         if (createTime != null ? !createTime.equals(that.createTime) : that.createTime != null) return false;
         if (updateTime != null ? !updateTime.equals(that.updateTime) : that.updateTime != null) return false;
         if (merchantId != null ? !merchantId.equals(that.merchantId) : that.merchantId != null) return false;
+        if (utoken != null ? !utoken.equals(that.utoken) : that.utoken != null) return false;
 
         return true;
     }
@@ -188,6 +200,7 @@ public class MerAccountEntity extends IdEntity {
         result = 31 * result + (createTime != null ? createTime.hashCode() : 0);
         result = 31 * result + (updateTime != null ? updateTime.hashCode() : 0);
         result = 31 * result + (merchantId != null ? merchantId.hashCode() : 0);
+        result = 31 * result + (utoken != null ? utoken.hashCode() : 0);
         return result;
     }
 

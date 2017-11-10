@@ -19,7 +19,6 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
-@RestController
 @EnableScheduling
 @SpringBootApplication
 @ImportResource(value={"${ConfigPath}dubbo-consumer.xml"})
@@ -56,31 +55,6 @@ public class AppConsumer {
         application.run(args);
 
         System.out.println( "Hello AppConsumer is run....." );
-
-    }
-
-    @RequestMapping(value="/getdemo", method= RequestMethod.GET)
-    public DemoPj getdemo(HttpServletRequest request)
-            throws Exception {
-        DemoPj pj = demoService.getDemoPj("你", "说",":","abc123");
-        return pj;
-    }
-
-    @RequestMapping(value="/getdemoList",  method= RequestMethod.GET)
-    public List<DemoPj> getdemoList(HttpServletRequest request)
-            throws Exception {
-        List<DemoPj> pjs = demoService.getDemoPjList(3);
-        return pjs;
-    }
-
-    @RequestMapping(value="/testlog",  method= RequestMethod.GET)
-    public void testlog()
-            throws Exception {
-        LOGGER.trace("======trace");
-        LOGGER.debug("======debug");
-        LOGGER.info("======info");
-        LOGGER.warn("======warn");
-        LOGGER.error("======error");
 
     }
 

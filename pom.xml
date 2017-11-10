@@ -34,8 +34,9 @@
     <commons-lang3.version>3.4</commons-lang3.version>
     <commons-io.version>2.5</commons-io.version>
     <commons-codec.version>1.10</commons-codec.version>
+    <commons-beanutils.version>1.9.3</commons-beanutils.version>
     <guava.version>19.0</guava.version>
-    <fastjson.version>1.2.10</fastjson.version>
+    <fastjson.version>1.2.40</fastjson.version>
     <okhttp.version>3.4.1</okhttp.version>
     <validator.version>5.2.4.Final</validator.version>
     <druid.version>1.0.24</druid.version>
@@ -108,6 +109,16 @@
         <version>${commons-codec.version}</version>
       </dependency>
       <dependency>
+        <groupId>commons-beanutils</groupId>
+        <artifactId>commons-beanutils</artifactId>
+        <version>${commons-beanutils.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.code.gson</groupId>
+        <artifactId>gson</artifactId>
+        <version>2.8.2</version>
+      </dependency>
+      <dependency>
         <groupId>com.alibaba</groupId>
         <artifactId>dubbo</artifactId>
         <version>${dubbo.version}</version>
@@ -129,6 +140,11 @@
         <version>1.1.5</version>
       </dependency>
 
+      <dependency>
+        <groupId>com.alibaba</groupId>
+        <artifactId>fastjson</artifactId>
+        <version>${fastjson.version}</version>
+      </dependency>
 
     </dependencies>
   </dependencyManagement>

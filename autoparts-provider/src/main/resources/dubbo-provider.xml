@@ -8,7 +8,7 @@
     <dubbo:registry address="N/A" />
     <dubbo:protocol name="dubbo" port="9999"/>
     <dubbo:service interface="com.jxd.autoparts.api.interfaces.IDemoService" ref="demoService" />
+    <dubbo:service interface="com.jxd.autoparts.api.interfaces.IMerAccoutService" ref="merAccoutService" />
 
-    
 
 </beans>

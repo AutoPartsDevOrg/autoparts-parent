@@ -43,4 +43,16 @@ public final class MD5Util {
 		}
 		return md5.getMD5ofStr(strBeforeMd5);
 	}
+
+    public static String getMD5Info(String signStr,String md5Key){
+        MD5 md5 = new MD5();
+        String strBeforeMd5 = signStr + md5.getMD5ofStr(md5Key);
+        try {
+            strBeforeMd5 = new String(strBeforeMd5.toString().getBytes("iso-8859-1"), "UTF-8");
+        } catch (UnsupportedEncodingException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        return md5.getMD5ofStr(strBeforeMd5);
+    }
 }

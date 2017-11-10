@@ -8,5 +8,6 @@
     <dubbo:consumer timeout="30000" />
     
     <dubbo:reference interface="com.jxd.autoparts.api.interfaces.IDemoService" id="demoService" url="dubbo://127.0.0.1:9999/com.jxd.autoparts.api.interfaces.IDemoService"/>
+    <dubbo:reference interface="com.jxd.autoparts.api.interfaces.IMerAccoutService" id="merAccoutService" url="dubbo://127.0.0.1:9999/com.jxd.autoparts.api.interfaces.IMerAccoutService"/>
 
 </beans>
